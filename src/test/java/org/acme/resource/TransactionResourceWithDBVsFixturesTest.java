@@ -2,8 +2,6 @@ package org.acme.resource;
 
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.response.Response;
-import jakarta.inject.Inject;
-import org.acme.repository.TransactionRepository;
 import org.json.JSONException;
 import org.junit.jupiter.api.Test;
 import org.skyscreamer.jsonassert.JSONAssert;
@@ -13,13 +11,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.CoreMatchers.is;
 
 @QuarkusTest
 class TransactionResourceWithDBVsFixturesTest {
 
-    @Inject
-    TransactionRepository transactionRepository;
 
     @Test
     void getTransactions_whenAccountHasTransactions_shouldReturnExpectedTransactionList() throws IOException, JSONException {

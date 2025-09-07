@@ -1,11 +1,8 @@
 package org.acme.resource;
 
-import io.quarkus.hibernate.orm.panache.PanacheQuery;
 import io.quarkus.test.InjectMock;
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.http.ContentType;
-import io.restassured.response.Response;
-import jakarta.inject.Inject;
 import org.acme.model.Account;
 import org.acme.model.Statement;
 import org.acme.model.Transaction;
@@ -21,7 +18,6 @@ import java.util.List;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
 import static org.mockito.Mockito.when;
-import jakarta.inject.Inject;
 
 @QuarkusTest
 class TransactionResourceTest {
